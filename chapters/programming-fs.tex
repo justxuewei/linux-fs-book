@@ -1077,7 +1077,7 @@ Here is the source code for the \cf{lcat.c} program:
 37     printf("pid = %d\n", pid);
 38     kill(pid, SIGUSR1);
 39     sleep(1);
-40     if ((pid = file_is_locked(fd)) != 0) {
+40     if ((pid = file_is_locked(fd)) == 0) {
 41         system("cat hello");
 42     } else {
 43         /* shouldn't get here */
