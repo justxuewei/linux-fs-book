@@ -931,7 +931,7 @@ Vectored I/O became popular with databases where large amount of I/O were needed
 
 In a single application, a file can be accessed by multiple processes or by multiple threads within a single process. To handle synchronization between threads in a single processes there are various locking primitives that can be used by threads within the process. If multiple processes are accessing a file simultaneously, there are a different set of file and record locking interfaces that can be used to coordinate access. Historically, file locking has been a bit of a mess.
 
-Some of these interfaces predate per-process multi-threading support. In particular, \textit{ddvisory} and \textit{mandatory} file locking have been around for many years and come with a set of issues that developers should be aware of. 
+Some of these interfaces predate per-process multi-threading support. In particular, \textit{advisory} and \textit{mandatory} file locking have been around for many years and come with a set of issues that developers should be aware of. 
 
 %------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -1121,7 +1121,7 @@ alock - file now unlocked  |
 \end{lstlisting}
 
 \noindent
-Since this is advisory locking, applications must work in coordination with each other and non-cooperating applications cannit interfere otherwise assumptions will be broken. It would be best to segregate these applications and files so that no other users/processes can get access to them.
+Since this is advisory locking, applications must work in coordination with each other and non-cooperating applications cannot interfere otherwise assumptions will be broken. It would be best to segregate these applications and files so that no other users/processes can get access to them.
 
 %------------------------------------------------------------------------------------------------------------------------------------------------------------
 
